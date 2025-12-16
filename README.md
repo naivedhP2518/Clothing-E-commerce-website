@@ -1,7 +1,5 @@
 # Urban Threads - Modern Clothing E-commerce Website
 
-![Urban Threads Logo](https://via.placeholder.com/150x50/000000/FFFFFF?text=URBAN+THREADS)
-
 Urban Threads is a modern, responsive e-commerce website for fashion enthusiasts. Founded in Vadodara in 2024, it offers a curated collection of trendy clothing and accessories, blending timeless silhouettes with contemporary street style.
 
 ## Features
@@ -37,16 +35,6 @@ Urban Threads is a modern, responsive e-commerce website for fashion enthusiasts
    - Simply open `index.html` in your web browser
    - No server setup required for static site
 
-3. **Optional: Run with a local server (for better development experience):**
-   ```bash
-   # Using Python
-   python -m http.server 8000
-
-   # Using Node.js (if available)
-   npx serve .
-
-   # Then open http://localhost:8000 in your browser
-   ```
 
 ## Usage
 
@@ -102,16 +90,7 @@ We welcome contributions to Urban Threads! Here's how you can help:
 - Ensure responsive design works across breakpoints
 - Add comments for complex JavaScript logic
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Contact
-
-Urban Threads
-- Website: [www.urbanthreads.com](https://www.urbanthreads.com)
-- Email: info@urbanthreads.com
-- Location: Vadodara, India
+E) file for details.
 
 Founded in 2024, Urban Threads is committed to redefining fashion with quality, style, and accessibility.
 

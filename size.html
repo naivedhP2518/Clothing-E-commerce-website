@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Size Guide - Urban Threads</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+        /* Reusing styles for consistency */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+            color: #1a1a1a;
+        }
+        body.overflow-hidden {
+            overflow: hidden;
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #1a1a1a;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        /* Custom styles for size guide */
+        .guide-section h2 {
+            font-size: 1.875rem; /* text-3xl */
+            font-weight: 700; /* bold */
+            border-bottom: 2px solid #e5e7eb; /* border-gray-200 */
+            padding-bottom: 0.75rem; /* pb-3 */
+            margin-bottom: 1.5rem; /* mb-6 */
+        }
+         .guide-section h3 {
+            font-size: 1.25rem; /* text-xl */
+            font-weight: 600; /* semibold */
+            margin-top: 2rem; /* mt-8 */
+            margin-bottom: 1rem; /* mb-4 */
+        }
+        .guide-section p {
+            color: #4b5563; /* text-gray-600 */
+            line-height: 1.75; /* leading-relaxed */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        th, td {
+            text-align: left;
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        th {
+            background-color: #f9fafb; /* bg-gray-50 */
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header Section -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="index.html" class="text-2xl font-bold tracking-wider">URBAN <span class="font-light">THREADS</span></a>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html#home" class="nav-link font-medium">Home</a>
+                <a href="index.html#new-arrivals" class="nav-link font-medium">New Arrivals</a>
+                <a href="index.html#trending" class="nav-link font-medium">Trending</a>
+                <a href="index.html#collections" class="nav-link font-medium">Collections</a>
+            </div>
+
+            <!-- Icons -->
+            <div class="flex items-center space-x-5">
+                <button class="text-gray-600 hover:text-black"><i data-feather="search"></i></button>
+                <a href="profile.html" class="text-gray-600 hover:text-black"><i data-feather="user"></i></a>
+                <button id="cart-button" class="relative text-gray-600 hover:text-black">
+                    <i data-feather="shopping-bag"></i>
+                    <span id="cart-count" class="absolute -top-2 -right-2 w-4 h-4 bg-black text-white text-xs rounded-full flex items-center justify-center">0</span>
+                </button>
+                <button class="md:hidden text-gray-600 hover:text-black" id="mobile-menu-button">
+                    <i data-feather="menu"></i>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden" id="mobile-menu">
+            <a href="index.html#home" class="block py-2 px-6 text-sm hover:bg-gray-100">Home</a>
+            <a href="index.html#new-arrivals" class="block py-2 px-6 text-sm hover:bg-gray-100">New Arrivals</a>
+            <a href="index.html#trending" class="block py-2 px-6 text-sm hover:bg-gray-100">Trending</a>
+            <a href="index.html#collections" class="block py-2 px-6 text-sm hover:bg-gray-100">Collections</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Hero Section -->
+        <section class="bg-zinc-200">
+            <div class="container mx-auto px-6 py-12 text-center">
+                <h1 class="text-4xl md:text-5xl font-extrabold uppercase tracking-wider text-zinc-800">Size Guide</h1>
+                <p class="text-lg text-zinc-700 mt-4 max-w-2xl mx-auto">Find your perfect fit. All measurements are in inches.</p>
+            </div>
+        </section>
+
+        <!-- Size Guide Section -->
+        <section class="py-16 md:py-24">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <div class="guide-section bg-white p-8 md:p-12 rounded-lg shadow-lg">
+                    <h2>How To Measure</h2>
+                    <p class="mb-6">To ensure the best fit, compare your measurements with the charts below. For best results, measure yourself with a tape measure over your undergarments.</p>
+                    <ul class="list-disc pl-5 text-gray-600 space-y-2">
+                        <li><strong>Chest:</strong> Measure around the fullest part of your chest, keeping the tape horizontal.</li>
+                        <li><strong>Waist:</strong> Measure around your natural waistline, the narrowest part of your torso.</li>
+                        <li><strong>Hips:</strong> Stand with your feet together and measure around the fullest part of your hips.</li>
+                    </ul>
+                </div>
+                
+                <div class="guide-section bg-white p-8 md:p-12 rounded-lg shadow-lg mt-12">
+                    <h2>Tops, T-Shirts & Outerwear</h2>
+                     <p>This chart applies to both Men's and Women's tops unless specified otherwise.</p>
+                    <div class="overflow-x-auto">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Size</th>
+                                    <th>Chest (in)</th>
+                                    <th>Waist (in)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>XS</td><td>34-36</td><td>28-30</td></tr>
+                                <tr><td>S</td><td>36-38</td><td>30-32</td></tr>
+                                <tr><td>M</td><td>38-40</td><td>32-34</td></tr>
+                                <tr><td>L</td><td>40-42</td><td>34-36</td></tr>
+                                <tr><td>XL</td><td>42-44</td><td>36-38</td></tr>
+                                <tr><td>XXL</td><td>44-46</td><td>38-40</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="guide-section bg-white p-8 md:p-12 rounded-lg shadow-lg mt-12">
+                    <h2>Bottoms - Jeans & Pants</h2>
+                    <p>Waist sizes are listed in inches.</p>
+                     <div class="overflow-x-auto">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Size</th>
+                                    <th>Waist (in)</th>
+                                    <th>Hips (in)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>28</td><td>28-29</td><td>34-35</td></tr>
+                                <tr><td>30</td><td>30-31</td><td>36-37</td></tr>
+                                <tr><td>32</td><td>32-33</td><td>38-39</td></tr>
+                                <tr><td>34</td><td>34-35</td><td>40-41</td></tr>
+                                <tr><td>36</td><td>36-37</td><td>42-43</td></tr>
+                                <tr><td>38</td><td>38-39</td><td>44-45</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-400 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                 <div>
+                    <h4 class="text-white text-lg font-semibold mb-4">URBAN THREADS</h4>
+                    <p class="text-sm">Redefining fashion with trendy, high-quality apparel for the modern individual.</p>
+                </div>
+                <div>
+                    <h4 class="text-white text-lg font-semibold mb-4">Shop</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html#new-arrivals" class="hover:text-white">New Arrivals</a></li>
+                        <li><a href="man.html" class="hover:text-white">Men</a></li>
+                        <li><a href="woman.html" class="hover:text-white">Women</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white text-lg font-semibold mb-4">Customer Service</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="contact.html" class="hover:text-white">Contact Us</a></li>
+                        <li><a href="shipping.html" class="hover:text-white">Shipping & Returns</a></li>
+                        <li><a href="faq.html" class="hover:text-white">FAQ</a></li>
+                        <li><a href="size.html" class="hover:text-white">Size Guide</a></li>
+                    </ul>
+                </div>
+                <div>
+                     <h4 class="text-white text-lg font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="about.html" class="hover:text-white">About Us</a></li>
+                        <li><a href="Careers.html" class="hover:text-white">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-sm">
+                <p>&copy; 2025 Urban Threads. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            feather.replace();
+
+            // --- Elements ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const cartButton = document.getElementById('cart-button');
+            const cartCountEl = document.getElementById('cart-count');
+
+            let cart = JSON.parse(localStorage.getItem('urbanThreadsCart')) || [];
+
+            // --- Mobile Menu ---
+            mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+            // --- Cart Count Update ---
+            const updateCartCount = () => {
+                const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+                cartCountEl.textContent = totalItems;
+            };
+
+            cartButton.addEventListener('click', () => {
+                window.location.href = 'index.html#cart-open';
+            });
+
+            // --- Initial Load ---
+            updateCartCount();
+        });
+    </script>
+</body>
+</html>

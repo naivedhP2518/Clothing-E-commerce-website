@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Urban Threads</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+        /* Reusing styles for consistency */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+            color: #1a1a1a;
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #1a1a1a;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .policy-content h2 {
+            font-size: 1.5rem; /* text-2xl */
+            font-weight: 600; /* semibold */
+            margin-top: 2rem; /* mt-8 */
+            margin-bottom: 1rem; /* mb-4 */
+            border-bottom: 1px solid #e5e7eb; /* border-gray-200 */
+            padding-bottom: 0.5rem; /* pb-2 */
+        }
+        .policy-content p, .policy-content ul {
+            color: #4b5563; /* text-gray-600 */
+            line-height: 1.75; /* leading-relaxed */
+            margin-bottom: 1rem;
+        }
+        .policy-content ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+        }
+        .policy-content strong {
+            color: #1f2937; /* text-gray-800 */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header Section -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="index.html" class="text-2xl font-bold tracking-wider">URBAN <span class="font-light">THREADS</span></a>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html#home" class="nav-link font-medium">Home</a>
+                <a href="index.html#new-arrivals" class="nav-link font-medium">New Arrivals</a>
+                <a href="index.html#trending" class="nav-link font-medium">Trending</a>
+                <a href="index.html#collections" class="nav-link font-medium">Collections</a>
+            </div>
+
+            <!-- Icons -->
+            <div class="flex items-center space-x-5">
+                <button class="text-gray-600 hover:text-black"><i data-feather="search"></i></button>
+                <a href="profile.html" class="text-gray-600 hover:text-black"><i data-feather="user"></i></a>
+                <button id="cart-button" class="relative text-gray-600 hover:text-black">
+                    <i data-feather="shopping-bag"></i>
+                    <span id="cart-count" class="absolute -top-2 -right-2 w-4 h-4 bg-black text-white text-xs rounded-full flex items-center justify-center">0</span>
+                </button>
+                <button class="md:hidden text-gray-600 hover:text-black" id="mobile-menu-button">
+                    <i data-feather="menu"></i>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden" id="mobile-menu">
+            <a href="index.html#home" class="block py-2 px-6 text-sm hover:bg-gray-100">Home</a>
+            <a href="index.html#new-arrivals" class="block py-2 px-6 text-sm hover:bg-gray-100">New Arrivals</a>
+            <a href="index.html#trending" class="block py-2 px-6 text-sm hover:bg-gray-100">Trending</a>
+            <a href="index.html#collections" class="block py-2 px-6 text-sm hover:bg-gray-100">Collections</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Hero Section -->
+        <section class="bg-zinc-200">
+            <div class="container mx-auto px-6 py-12 text-center">
+                <h1 class="text-4xl md:text-5xl font-extrabold uppercase tracking-wider text-zinc-800">Privacy Policy</h1>
+                <p class="text-lg text-zinc-700 mt-4 max-w-2xl mx-auto">Your privacy is important to us. Last updated: October 10, 2025.</p>
+            </div>
+        </section>
+
+        <!-- Policy Content Section -->
+        <section class="py-16 md:py-24">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <div class="policy-content bg-white p-8 md:p-12 rounded-lg shadow-lg">
+                    <p>Welcome to Urban Threads. We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about our policy, or our practices with regards to your personal information, please contact us at <a href="mailto:privacy@urbanthreads.com" class="text-blue-600 hover:underline">privacy@urbanthreads.com</a>.</p>
+                    
+                    <h2>1. What Information Do We Collect?</h2>
+                    <p>We collect personal information that you voluntarily provide to us when you register on the website, express an interest in obtaining information about us or our products and services, when you participate in activities on the website or otherwise when you contact us.</p>
+                    <p>The personal information that we collect depends on the context of your interactions with us and the website, the choices you make and the products and features you use. The personal information we collect may include the following:</p>
+                    <ul>
+                        <li><strong>Personal Information Provided by You.</strong> We collect names; phone numbers; email addresses; mailing addresses; usernames; passwords; contact preferences; and other similar information.</li>
+                        <li><strong>Payment Data.</strong> We may collect data necessary to process your payment if you make purchases, such as your payment instrument number (such as a credit card number), and the security code associated with your payment instrument. All payment data is stored by our payment processor.</li>
+                    </ul>
+
+                    <h2>2. How Do We Use Your Information?</h2>
+                    <p>We use personal information collected via our website for a variety of business purposes described below. We process your personal information for these purposes in reliance on our legitimate business interests, in order to enter into or perform a contract with you, with your consent, and/or for compliance with our legal obligations.</p>
+                    <ul>
+                        <li>To facilitate account creation and logon process.</li>
+                        <li>To post testimonials.</li>
+                        <li>To send administrative information to you.</li>
+                        <li>To fulfill and manage your orders.</li>
+                        <li>To deliver and facilitate delivery of services to the user.</li>
+                    </ul>
+
+                    <h2>3. Will Your Information Be Shared With Anyone?</h2>
+                    <p>We only share information with your consent, to comply with laws, to provide you with services, to protect your rights, or to fulfill business obligations.</p>
+
+                    <h2>4. How Do We Keep Your Information Safe?</h2>
+                    <p>We have implemented appropriate technical and organizational security measures designed to protect the security of any personal information we process. However, despite our safeguards and efforts to secure your information, no electronic transmission over the Internet or information storage technology can be guaranteed to be 100% secure.</p>
+
+                    <h2>5. What Are Your Privacy Rights?</h2>
+                    <p>In some regions, such as the European Economic Area (EEA) and UK, you have rights that allow you greater access to and control over your personal information. You may review, change, or terminate your account at any time through your profile page.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-400 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                 <div>
+                    <h4 class="text-white text-lg font-semibold mb-4">URBAN THREADS</h4>
+                    <p class="text-sm">Redefining fashion with trendy, high-quality apparel for the modern individual.</p>
+                </div>
+                <div>
+                    <h4 class="text-white text-lg font-semibold mb-4">Shop</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html#new-arrivals" class="hover:text-white">New Arrivals</a></li>
+                        <li><a href="man.html" class="hover:text-white">Men</a></li>
+                        <li><a href="woman.html" class="hover:text-white">Women</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white text-lg font-semibold mb-4">Customer Service</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="contect.html" class="hover:text-white">Contact Us</a></li>
+                        <li><a href="shipping.html" class="hover:text-white">Shipping & Returns</a></li>
+                        <li><a href="faq.html" class="hover:text-white">FAQ</a></li>
+                        <li><a href="size.html" class="hover:text-white">Size Guide</a></li>
+                    </ul>
+                </div>
+                <div>
+                     <h4 class="text-white text-lg font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="about.html" class="hover:text-white">About Us</a></li>
+                        <li><a href="careers.html" class="hover:text-white">Careers</a></li>
+                        <li><a href="policy.html" class="hover:text-white">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-sm">
+                <p>&copy; 2025 Urban Threads. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            feather.replace();
+
+            // --- Elements ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const cartButton = document.getElementById('cart-button');
+            const cartCountEl = document.getElementById('cart-count');
+
+            let cart = JSON.parse(localStorage.getItem('urbanThreadsCart')) || [];
+
+            // --- Mobile Menu ---
+            mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+            // --- Cart Count Update ---
+            const updateCartCount = () => {
+                const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+                cartCountEl.textContent = totalItems;
+            };
+
+            cartButton.addEventListener('click', () => {
+                window.location.href = 'index.html#cart-open';
+            });
+
+            // --- Initial Load ---
+            updateCartCount();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account - Urban Threads</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+            color: #1a1a1a;
+        }
+        .profile-nav-link {
+            transition: all 0.3s ease;
+        }
+        .profile-nav-link.active, .profile-nav-link:hover {
+            background-color: #f1f5f9; /* cool-gray-100 */
+            color: #1a1a1a;
+            border-right: 3px solid #1a1a1a;
+        }
+         .btn-primary {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #333333;
+        }
+        .btn-secondary {
+            background-color: transparent;
+            color: #1a1a1a;
+            border: 1px solid #1a1a1a;
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+        /* Style for disabled inputs */
+        input:disabled {
+            background-color: #e9ecef;
+            cursor: not-allowed;
+        }
+        /* Styles for Modal */
+        .modal-overlay {
+            transition: opacity 0.3s ease;
+        }
+        .modal-container {
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header Section -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="index.html" class="text-2xl font-bold tracking-wider">URBAN <span class="font-light">THREADS</span></a>
+            <!-- Icons -->
+            <div class="flex items-center space-x-5">
+                <a href="index.html" class="text-gray-600 hover:text-black"><i data-feather="home"></i></a>
+                <a href="profile.html" class="text-gray-600 hover:text-black"><i data-feather="user"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12 md:py-16">
+        <h1 class="text-3xl md:text-4xl font-bold mb-8">My Account</h1>
+        <div class="flex flex-col md:flex-row gap-10">
+            <!-- Left Side Navigation -->
+            <aside class="w-full md:w-1/4">
+                <nav class="flex flex-col space-y-2">
+                    <a href="#personalDetails" class="profile-nav-link active font-semibold p-3 rounded-l-lg">Personal Details</a>
+                    <a href="#orderHistory" class="profile-nav-link font-semibold p-3 rounded-l-lg">Order History</a>
+                    <a href="#shippingAddresses" class="profile-nav-link font-semibold p-3 rounded-l-lg">Shipping Addresses</a>
+                    <a href="#trackParcel" class="profile-nav-link font-semibold p-3 rounded-l-lg">Track Parcel</a>
+                    <a href="#" class="profile-nav-link font-semibold p-3 rounded-l-lg text-red-600">Logout</a>
+                </nav>
+            </aside>
+
+            <!-- Right Side Content -->
+            <div class="w-full md:w-3/4">
+                <!-- Personal Details Section -->
+                <section id="personalDetails" class="content-section w-full bg-white p-8 rounded-lg shadow-sm">
+                    <h2 class="text-2xl font-bold mb-6">Personal Details</h2>
+                    <form id="profileForm">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="firstName" class="block text-sm font-medium text-gray-700">First Name</label>
+                                <input type="text" id="firstName" value="Alex" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-black focus:border-black" disabled>
+                            </div>
+                            <div>
+                                <label for="lastName" class="block text-sm font-medium text-gray-700">Last Name</label>
+                                <input type="text" id="lastName" value="Doe" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-black focus:border-black" disabled>
+                            </div>
+                            <div class="md:col-span-2">
+                                <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                                <input type="email" id="email" value="alex.doe@example.com" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-black focus:border-black" disabled>
+                            </div>
+                            <div class="md:col-span-2">
+                                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                                <input type="password" id="password" value="********" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm" disabled>
+                                <a href="#" class="text-sm text-blue-600 hover:underline mt-1 inline-block">Change Password</a>
+                            </div>
+                        </div>
+                        <div class="mt-8 text-right space-x-4">
+                            <button type="button" id="editButton" class="btn-secondary py-2 px-6 rounded-lg font-semibold">Edit Profile</button>
+                            <button type="button" id="cancelButton" class="btn-secondary py-2 px-6 rounded-lg font-semibold hidden">Cancel</button>
+                            <button type="submit" id="saveButton" class="btn-primary py-2 px-6 rounded-lg font-semibold hidden">Save Changes</button>
+                        </div>
+                    </form>
+                </section>
+
+                <!-- Order History Section -->
+                <section id="orderHistory" class="content-section hidden w-full bg-white p-8 rounded-lg shadow-sm">
+                    <h2 class="text-2xl font-bold mb-6">Order History</h2>
+                    <div class="space-y-6">
+                        <div id="no-orders" class="text-center text-gray-500 py-8">
+                            <i data-feather="archive" class="w-16 h-16 mx-auto mb-4"></i>
+                            <h3 class="text-lg font-semibold">No Order History</h3>
+                            <p class="text-sm">You haven't placed any orders yet.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Shipping Addresses Section -->
+                <section id="shippingAddresses" class="content-section hidden w-full bg-white p-8 rounded-lg shadow-sm">
+                     <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-2xl font-bold">Shipping Addresses</h2>
+                        <button id="addNewAddressBtn" class="btn-primary py-2 px-4 rounded-lg font-semibold text-sm flex items-center gap-2"><i data-feather="plus" class="w-4 h-4"></i> Add New</button>
+                    </div>
+                    <div id="addressList" class="space-y-4">
+                         <div id="no-address" class="text-center text-gray-500 py-8">
+                            <i data-feather="map-pin" class="w-16 h-16 mx-auto mb-4"></i>
+                            <h3 class="text-lg font-semibold">No Saved Addresses</h3>
+                            <p class="text-sm">You haven't saved any shipping addresses yet.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Track Parcel Section -->
+                <section id="trackParcel" class="content-section hidden w-full bg-white p-8 rounded-lg shadow-sm">
+                    <h2 class="text-2xl font-bold mb-6">Track Your Parcel</h2>
+                    <p class="text-gray-600 mb-6">Enter your tracking number below to see the status of your shipment.</p>
+                    <form class="flex items-center gap-4">
+                        <input type="text" placeholder="Enter Tracking Number" class="flex-grow block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-black focus:border-black">
+                        <button type="submit" class="btn-primary py-3 px-6 rounded-lg font-semibold">Track</button>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Add Address Modal -->
+    <div id="addressModal" class="fixed inset-0 z-50 flex items-center justify-center hidden">
+        <div class="modal-overlay absolute inset-0 bg-black opacity-50"></div>
+        <div class="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded-lg shadow-lg z-50 overflow-y-auto transform scale-95">
+            <div class="py-4 text-left px-6">
+                <div class="flex justify-between items-center pb-3">
+                    <p class="text-2xl font-bold">Add New Address</p>
+                    <button class="modal-close cursor-pointer z-50">
+                        <i data-feather="x"></i>
+                    </button>
+                </div>
+
+                <div id="location-permission" class="text-center p-4 border rounded-lg">
+                     <i data-feather="map" class="w-12 h-12 mx-auto text-gray-400 mb-3"></i>
+                    <p class="mb-4 text-gray-600">Please provide your mobile number for location access to add your address automatically.</p>
+                    <button id="useLocationBtn" class="btn-primary w-full py-2 rounded-lg mb-2">Use Current Location</button>
+                    <button id="manualEntryBtn" class="btn-secondary w-full py-2 rounded-lg">Enter Manually</button>
+                </div>
+
+                <form id="addressForm" class="hidden mt-4">
+                    <div class="space-y-4">
+                        <input type="text" placeholder="Full Name" name="fullName" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-black focus:border-black" required>
+                        <input type="tel" placeholder="Mobile Number" name="mobile" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-black focus:border-black" required>
+                        <input type="text" placeholder="Address Line 1" name="address1" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-black focus:border-black" required>
+                        <input type="text" placeholder="Address Line 2 (Optional)" name="address2" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-black focus:border-black">
+                        <div class="grid grid-cols-2 gap-4">
+                             <input type="text" placeholder="City" name="city" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-black focus:border-black" required>
+                             <input type="text" placeholder="State" name="state" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-black focus:border-black" required>
+                        </div>
+                         <div class="grid grid-cols-2 gap-4">
+                             <input type="text" placeholder="Pincode" name="pincode" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-black focus:border-black" required>
+                             <input type="text" placeholder="Country" name="country" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-black focus:border-black" required>
+                        </div>
+                        <div>
+                             <p class="font-semibold mb-2 text-sm">Address Type:</p>
+                             <div class="flex items-center gap-4">
+                                 <label class="flex items-center gap-2"><input type="radio" name="addressType" value="Home" class="form-radio" checked> Home</label>
+                                 <label class="flex items-center gap-2"><input type="radio" name="addressType" value="Workplace" class="form-radio"> Workplace</label>
+                                 <label class="flex items-center gap-2"><input type="radio" name="addressType" value="Other" class="form-radio"> Other</label>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="text-right mt-6">
+                        <button type="submit" class="btn-primary py-2 px-6 rounded-lg font-semibold">Save Address</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-400 py-12 mt-16">
+        <div class="container mx-auto px-6 text-center text-sm">
+            <p>&copy; 2025 Urban Threads. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            feather.replace();
+
+            // --- Profile Edit/Save Logic ---
+            const profileForm = document.getElementById('profileForm');
+            const formInputs = profileForm.querySelectorAll('input:not(#password)');
+            const editButton = document.getElementById('editButton');
+            const saveButton = document.getElementById('saveButton');
+            const cancelButton = document.getElementById('cancelButton');
+            let initialFormValues = {};
+            const storeInitialValues = () => formInputs.forEach(input => initialFormValues[input.id] = input.value);
+            const restoreInitialValues = () => formInputs.forEach(input => input.value = initialFormValues[input.id]);
+            const setViewMode = () => {
+                formInputs.forEach(input => input.disabled = true);
+                editButton.classList.remove('hidden');
+                saveButton.classList.add('hidden');
+                cancelButton.classList.add('hidden');
+            };
+            const setEditMode = () => {
+                storeInitialValues();
+                formInputs.forEach(input => input.disabled = false);
+                editButton.classList.add('hidden');
+                saveButton.classList.remove('hidden');
+                cancelButton.classList.remove('hidden');
+                document.getElementById('firstName').focus();
+            };
+            editButton.addEventListener('click', setEditMode);
+            cancelButton.addEventListener('click', () => {
+                restoreInitialValues();
+                setViewMode();
+            });
+            profileForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Profile updated successfully!');
+                setViewMode();
+            });
+            storeInitialValues();
+
+            // --- Tab Navigation Logic ---
+            const navLinks = document.querySelectorAll('.profile-nav-link');
+            const contentSections = document.querySelectorAll('.content-section');
+            navLinks.forEach(link => {
+                if(link.textContent === 'Logout') return;
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href').substring(1);
+                    navLinks.forEach(nav => nav.classList.remove('active'));
+                    link.classList.add('active');
+                    contentSections.forEach(section => {
+                        section.id === targetId ? section.classList.remove('hidden') : section.classList.add('hidden');
+                    });
+                });
+            });
+
+            // --- Address Modal Logic ---
+            const addressModal = document.getElementById('addressModal');
+            const addNewAddressBtn = document.getElementById('addNewAddressBtn');
+            const modalClose = addressModal.querySelector('.modal-close');
+            const modalOverlay = addressModal.querySelector('.modal-overlay');
+            const useLocationBtn = document.getElementById('useLocationBtn');
+            const manualEntryBtn = document.getElementById('manualEntryBtn');
+            const locationPermissionDiv = document.getElementById('location-permission');
+            const addressForm = document.getElementById('addressForm');
+            const addressList = document.getElementById('addressList');
+            const noAddressPlaceholder = document.getElementById('no-address');
+            
+            const openModal = () => {
+                addressModal.classList.remove('hidden');
+                setTimeout(()=> addressModal.querySelector('.modal-container').classList.remove('scale-95'), 50);
+            };
+            const closeModal = () => {
+                addressModal.querySelector('.modal-container').classList.add('scale-95');
+                setTimeout(()=> {
+                    addressModal.classList.add('hidden');
+                    locationPermissionDiv.classList.remove('hidden');
+                    addressForm.classList.add('hidden');
+                    addressForm.reset();
+                }, 300);
+            };
+
+            addNewAddressBtn.addEventListener('click', openModal);
+            modalClose.addEventListener('click', closeModal);
+            modalOverlay.addEventListener('click', closeModal);
+
+            manualEntryBtn.addEventListener('click', () => {
+                locationPermissionDiv.classList.add('hidden');
+                addressForm.classList.remove('hidden');
+            });
+
+            useLocationBtn.addEventListener('click', () => {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(
+                        (position) => {
+                            // SIMULATED: In a real app, you would use a reverse geocoding API
+                            alert('Location accessed! Filling in with dummy data.');
+                            const form = addressForm.elements;
+                            form.address1.value = '123 Tech Street';
+                            form.city.value = 'Innovate City';
+                            form.state.value = 'California';
+                            form.pincode.value = '90210';
+                            form.country.value = 'USA';
+                            locationPermissionDiv.classList.add('hidden');
+                            addressForm.classList.remove('hidden');
+                        },
+                        (error) => {
+                            alert('Could not get location. Please enter manually.');
+                            console.error("Geolocation error:", error);
+                            locationPermissionDiv.classList.add('hidden');
+                            addressForm.classList.remove('hidden');
+                        }
+                    );
+                } else {
+                    alert("Geolocation is not supported by this browser.");
+                    locationPermissionDiv.classList.add('hidden');
+                    addressForm.classList.remove('hidden');
+                }
+            });
+            
+            addressForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const formData = new FormData(addressForm);
+                const data = Object.fromEntries(formData.entries());
+
+                if (noAddressPlaceholder) noAddressPlaceholder.classList.add('hidden');
+                
+                const addressCard = `
+                    <div class="border rounded-lg p-4 flex justify-between items-start">
+                        <div>
+                            <div class="flex items-center gap-3 mb-1">
+                                <h4 class="font-bold text-lg">${data.fullName}</h4>
+                                <span class="text-xs font-semibold bg-gray-200 text-gray-700 px-2 py-0.5 rounded-full">${data.addressType}</span>
+                            </div>
+                            <p class="text-gray-600 text-sm">${data.address1}, ${data.address2 ? data.address2 + ', ' : ''}${data.city}, ${data.state} - ${data.pincode}</p>
+                            <p class="text-gray-600 text-sm">Mobile: ${data.mobile}</p>
+                        </div>
+                        <div class="flex gap-2">
+                           <button class="text-gray-500 hover:text-blue-600"><i data-feather="edit-2" class="w-4 h-4"></i></button>
+                           <button class="delete-address text-gray-500 hover:text-red-600"><i data-feather="trash-2" class="w-4 h-4"></i></button>
+                        </div>
+                    </div>
+                `;
+                addressList.insertAdjacentHTML('beforeend', addressCard);
+                feather.replace();
+                closeModal();
+            });
+
+            addressList.addEventListener('click', (e) => {
+                if(e.target.closest('.delete-address')) {
+                    e.target.closest('.border').remove();
+                     if (addressList.children.length === 1) { // Only placeholder is left
+                        noAddressPlaceholder.classList.remove('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

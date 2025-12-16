@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Urban Threads</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+        /* Reusing styles for consistency */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+            color: #1a1a1a;
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #1a1a1a;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .terms-content h2 {
+            font-size: 1.5rem; /* text-2xl */
+            font-weight: 600; /* semibold */
+            margin-top: 2rem; /* mt-8 */
+            margin-bottom: 1rem; /* mb-4 */
+            border-bottom: 1px solid #e5e7eb; /* border-gray-200 */
+            padding-bottom: 0.5rem; /* pb-2 */
+        }
+        .terms-content p, .terms-content ul {
+            color: #4b5563; /* text-gray-600 */
+            line-height: 1.75; /* leading-relaxed */
+            margin-bottom: 1rem;
+        }
+        .terms-content ul {
+            list-style-type: decimal;
+            padding-left: 1.5rem;
+        }
+         .terms-content ol {
+            list-style-type: lower-alpha;
+            padding-left: 1.5rem;
+        }
+        .terms-content strong {
+            color: #1f2937; /* text-gray-800 */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header Section -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="index.html" class="text-2xl font-bold tracking-wider">URBAN <span class="font-light">THREADS</span></a>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html#home" class="nav-link font-medium">Home</a>
+                <a href="index.html#new-arrivals" class="nav-link font-medium">New Arrivals</a>
+                <a href="index.html#trending" class="nav-link font-medium">Trending</a>
+                <a href="index.html#collections" class="nav-link font-medium">Collections</a>
+            </div>
+
+            <!-- Icons -->
+            <div class="flex items-center space-x-5">
+                <button class="text-gray-600 hover:text-black"><i data-feather="search"></i></button>
+                <a href="profile.html" class="text-gray-600 hover:text-black"><i data-feather="user"></i></a>
+                <button id="cart-button" class="relative text-gray-600 hover:text-black">
+                    <i data-feather="shopping-bag"></i>
+                    <span id="cart-count" class="absolute -top-2 -right-2 w-4 h-4 bg-black text-white text-xs rounded-full flex items-center justify-center">0</span>
+                </button>
+                <button class="md:hidden text-gray-600 hover:text-black" id="mobile-menu-button">
+                    <i data-feather="menu"></i>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden" id="mobile-menu">
+            <a href="index.html#home" class="block py-2 px-6 text-sm hover:bg-gray-100">Home</a>
+            <a href="index.html#new-arrivals" class="block py-2 px-6 text-sm hover:bg-gray-100">New Arrivals</a>
+            <a href="index.html#trending" class="block py-2 px-6 text-sm hover:bg-gray-100">Trending</a>
+            <a href="index.html#collections" class="block py-2 px-6 text-sm hover:bg-gray-100">Collections</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Hero Section -->
+        <section class="bg-zinc-200">
+            <div class="container mx-auto px-6 py-12 text-center">
+                <h1 class="text-4xl md:text-5xl font-extrabold uppercase tracking-wider text-zinc-800">Terms of Service</h1>
+                <p class="text-lg text-zinc-700 mt-4 max-w-2xl mx-auto">Please read these terms carefully before using our services. Last updated: October 10, 2025.</p>
+            </div>
+        </section>
+
+        <!-- Terms Content Section -->
+        <section class="py-16 md:py-24">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <div class="terms-content bg-white p-8 md:p-12 rounded-lg shadow-lg">
+                    <p>Welcome to Urban Threads. These Terms of Service ("Terms") govern your use of our website and the services offered. By accessing or using our website, you agree to be bound by these Terms.</p>
+                    
+                    <h2>1. Use of Our Website</h2>
+                    <p>You agree to use our website for lawful purposes only and in a way that does not infringe the rights of, restrict, or inhibit anyone else's use and enjoyment of the website. Prohibited behavior includes harassing or causing distress or inconvenience to any other user, transmitting obscene or offensive content, or disrupting the normal flow of dialogue within our website.</p>
+
+                    <h2>2. Intellectual Property</h2>
+                    <p>All content included on this site, such as text, graphics, logos, images, and software, is the property of Urban Threads or its content suppliers and protected by international copyright laws. The compilation of all content on this site is the exclusive property of Urban Threads.</p>
+
+                    <h2>3. Accounts, Passwords, and Security</h2>
+                    <p>You are responsible for maintaining the confidentiality of your account and password and for restricting access to your computer. You agree to accept responsibility for all activities that occur under your account or password. If you are under 18, you may use our website only with involvement of a parent or guardian.</p>
+
+                    <h2>4. Product and Pricing Information</h2>
+                    <p>We strive to provide accurate product and pricing information, but pricing or typographical errors may occur. We cannot confirm the price of an item until after you order. In the event that an item is listed at an incorrect price or with incorrect information due to an error, we shall have the right, at our sole discretion, to refuse or cancel any orders placed for that item.</p>
+
+                    <h2>5. Limitation of Liability</h2>
+                    <p>Urban Threads will not be liable for any direct, indirect, incidental, special, or consequential damages that result from the use of, or the inability to use, this site or the performance of the products, even if Urban Threads has been advised of the possibility of such damages.</p>
+
+                    <h2>6. Governing Law</h2>
+                    <p>These Terms of Service and any separate agreements whereby we provide you services shall be governed by and construed in accordance with the laws of Gujarat, India.</p>
+
+                    <h2>7. Changes to Terms of Service</h2>
+                    <p>You can review the most current version of the Terms of Service at any time on this page. We reserve the right, at our sole discretion, to update, change or replace any part of these Terms of Service by posting updates and changes to our website. It is your responsibility to check our website periodically for changes.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-400 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                 <div>
+                    <h4 class="text-white text-lg font-semibold mb-4">URBAN THREADS</h4>
+                    <p class="text-sm">Redefining fashion with trendy, high-quality apparel for the modern individual.</p>
+                </div>
+                <div>
+                    <h4 class="text-white text-lg font-semibold mb-4">Shop</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html#new-arrivals" class="hover:text-white">New Arrivals</a></li>
+                        <li><a href="man.html" class="hover:text-white">Men</a></li>
+                        <li><a href="woman.html" class="hover:text-white">Women</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white text-lg font-semibold mb-4">Customer Service</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="contect.html" class="hover:text-white">Contact Us</a></li>
+                        <li><a href="shipping.html" class="hover:text-white">Shipping & Returns</a></li>
+                        <li><a href="faq.html" class="hover:text-white">FAQ</a></li>
+                        <li><a href="size.html" class="hover:text-white">Size Guide</a></li>
+                    </ul>
+                </div>
+                <div>
+                     <h4 class="text-white text-lg font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="about.html" class="hover:text-white">About Us</a></li>
+                        <li><a href="careers.html" class="hover:text-white">Careers</a></li>
+                        <li><a href="policy.html" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-white">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-sm">
+                <p>&copy; 2025 Urban Threads. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            feather.replace();
+
+            // --- Elements ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const cartButton = document.getElementById('cart-button');
+            const cartCountEl = document.getElementById('cart-count');
+
+            let cart = JSON.parse(localStorage.getItem('urbanThreadsCart')) || [];
+
+            // --- Mobile Menu ---
+            mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+            // --- Cart Count Update ---
+            const updateCartCount = () => {
+                const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+                cartCountEl.textContent = totalItems;
+            };
+
+            cartButton.addEventListener('click', () => {
+                window.location.href = 'index.html#cart-open';
+            });
+
+            // --- Initial Load ---
+            updateCartCount();
+        });
+    </script>
+</body>
+</html>

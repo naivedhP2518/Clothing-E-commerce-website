@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Men's Collection - Urban Threads</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+        /* Reusing styles from index.html for consistency */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+            color: #1a1a1a;
+        }
+        body.overflow-hidden {
+            overflow: hidden;
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #1a1a1a;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+        .btn-primary {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #333333;
+        }
+        .btn-secondary {
+            background-color: transparent;
+            color: #1a1a1a;
+            border: 1px solid #1a1a1a;
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+        #cart-sidebar {
+            transition: transform 0.3s ease-in-out;
+        }
+        #cart-overlay {
+            transition: opacity 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header Section -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="index.html" class="text-2xl font-bold tracking-wider">URBAN <span class="font-light">THREADS</span></a>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html#home" class="nav-link font-medium">Home</a>
+                <a href="index.html#new-arrivals" class="nav-link font-medium">New Arrivals</a>
+                <a href="index.html#trending" class="nav-link font-medium">Trending</a>
+                <a href="index.html#collections" class="nav-link font-medium">Collections</a>
+            </div>
+
+            <!-- Icons -->
+            <div class="flex items-center space-x-5">
+                <button class="text-gray-600 hover:text-black"><i data-feather="search"></i></button>
+                <a href="profile.html" class="text-gray-600 hover:text-black"><i data-feather="user"></i></a>
+                <button id="cart-button" class="relative text-gray-600 hover:text-black">
+                    <i data-feather="shopping-bag"></i>
+                    <span id="cart-count" class="absolute -top-2 -right-2 w-4 h-4 bg-black text-white text-xs rounded-full flex items-center justify-center">0</span>
+                </button>
+                <button class="md:hidden text-gray-600 hover:text-black" id="mobile-menu-button">
+                    <i data-feather="menu"></i>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden" id="mobile-menu">
+            <a href="index.html#home" class="block py-2 px-6 text-sm hover:bg-gray-100">Home</a>
+            <a href="index.html#new-arrivals" class="block py-2 px-6 text-sm hover:bg-gray-100">New Arrivals</a>
+            <a href="index.html#trending" class="block py-2 px-6 text-sm hover:bg-gray-100">Trending</a>
+            <a href="index.html#collections" class="block py-2 px-6 text-sm hover:bg-gray-100">Collections</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Men's Collection Hero Section -->
+        <section class="bg-sky-200">
+            <div class="container mx-auto px-6 py-12 text-center">
+                <h1 class="text-4xl md:text-5xl font-extrabold uppercase tracking-wider text-sky-800">Men's Collection</h1>
+                <p class="text-lg text-sky-700 mt-4 max-w-2xl mx-auto">Curated styles for the modern man. From casual classics to sharp essentials, find your perfect fit.</p>
+            </div>
+        </section>
+
+        <!-- Men's Products Section -->
+        <section class="py-16">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                    <!-- Product Card 1 -->
+                    <div class="product-card bg-white rounded-lg overflow-hidden group" data-id="25" data-name="Classic Crewneck Tee" data-price="34.99" data-image="https://placehold.co/600x800/e0f2fe/0c4a6e?text=Crewneck+Tee">
+                        <img src="https://placehold.co/600x800/e0f2fe/0c4a6e?text=Crewneck+Tee" alt="Classic Crewneck Tee" class="w-full h-auto object-cover">
+                        <div class="p-4 text-center">
+                            <h3 class="font-semibold text-lg mb-1">Classic Crewneck Tee</h3>
+                            <p class="text-gray-500 text-sm mb-2">T-Shirts</p>
+                            <p class="font-bold text-lg">$34.99</p>
+                            <div class="mt-4">
+                               <button class="add-to-cart-btn btn-secondary w-full py-2 px-4 rounded-full text-sm font-semibold">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Product Card 2 -->
+                    <div class="product-card bg-white rounded-lg overflow-hidden group" data-id="26" data-name="Slim-Fit Chinos" data-price="79.99" data-image="https://placehold.co/600x800/d1fae5/065f46?text=Chinos">
+                        <img src="https://placehold.co/600x800/d1fae5/065f46?text=Chinos" alt="Slim-Fit Chinos" class="w-full h-auto object-cover">
+                        <div class="p-4 text-center">
+                            <h3 class="font-semibold text-lg mb-1">Slim-Fit Chinos</h3>
+                            <p class="text-gray-500 text-sm mb-2">Trousers</p>
+                            <p class="font-bold text-lg">$79.99</p>
+                            <div class="mt-4">
+                               <button class="add-to-cart-btn btn-secondary w-full py-2 px-4 rounded-full text-sm font-semibold">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Product Card 3 -->
+                    <div class="product-card bg-white rounded-lg overflow-hidden group" data-id="27" data-name="Denim Jacket" data-price="119.99" data-image="https://placehold.co/600x800/bfdbfe/1e3a8a?text=Denim+Jacket">
+                        <img src="https://placehold.co/600x800/bfdbfe/1e3a8a?text=Denim+Jacket" alt="Denim Jacket" class="w-full h-auto object-cover">
+                        <div class="p-4 text-center">
+                            <h3 class="font-semibold text-lg mb-1">Denim Jacket</h3>
+                            <p class="text-gray-500 text-sm mb-2">Outerwear</p>
+                            <p class="font-bold text-lg">$119.99</p>
+                            <div class="mt-4">
+                               <button class="add-to-cart-btn btn-secondary w-full py-2 px-4 rounded-full text-sm font-semibold">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Product Card 4 -->
+                    <div class="product-card bg-white rounded-lg overflow-hidden group" data-id="28" data-name="Leather Belt" data-price="49.99" data-image="https://placehold.co/600x800/7f5539/ffffff?text=Leather+Belt">
+                        <img src="https://placehold.co/600x800/7f5539/ffffff?text=Leather+Belt" alt="Leather Belt" class="w-full h-auto object-cover">
+                        <div class="p-4 text-center">
+                            <h3 class="font-semibold text-lg mb-1">Leather Belt</h3>
+                            <p class="text-gray-500 text-sm mb-2">Accessories</p>
+                            <p class="font-bold text-lg">$49.99</p>
+                            <div class="mt-4">
+                               <button class="add-to-cart-btn btn-secondary w-full py-2 px-4 rounded-full text-sm font-semibold">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Card 5 -->
+                    <div class="product-card bg-white rounded-lg overflow-hidden group" data-id="29" data-name="Oxford Shirt" data-price="69.99" data-image="https://placehold.co/600x800/f9fafb/374151?text=Oxford+Shirt">
+                        <img src="https://placehold.co/600x800/f9fafb/374151?text=Oxford+Shirt" alt="Oxford Shirt" class="w-full h-auto object-cover">
+                        <div class="p-4 text-center">
+                            <h3 class="font-semibold text-lg mb-1">Oxford Shirt</h3>
+                            <p class="text-gray-500 text-sm mb-2">Shirts</p>
+                            <p class="font-bold text-lg">$69.99</p>
+                            <div class="mt-4">
+                               <button class="add-to-cart-btn btn-secondary w-full py-2 px-4 rounded-full text-sm font-semibold">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Card 6 -->
+                    <div class="product-card bg-white rounded-lg overflow-hidden group" data-id="30" data-name="Wool Peacoat" data-price="249.99" data-image="https://placehold.co/600x800/374151/f9fafb?text=Peacoat">
+                        <img src="https://placehold.co/600x800/374151/f9fafb?text=Peacoat" alt="Wool Peacoat" class="w-full h-auto object-cover">
+                        <div class="p-4 text-center">
+                            <h3 class="font-semibold text-lg mb-1">Wool Peacoat</h3>
+                            <p class="text-gray-500 text-sm mb-2">Outerwear</p>
+                            <p class="font-bold text-lg">$249.99</p>
+                            <div class="mt-4">
+                               <button class="add-to-cart-btn btn-secondary w-full py-2 px-4 rounded-full text-sm font-semibold">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Card 7 -->
+                    <div class="product-card bg-white rounded-lg overflow-hidden group" data-id="31" data-name="Knit Polo" data-price="59.99" data-image="https://placehold.co/600x800/d4d4d8/18181b?text=Knit+Polo">
+                        <img src="https://placehold.co/600x800/d4d4d8/18181b?text=Knit+Polo" alt="Knit Polo" class="w-full h-auto object-cover">
+                        <div class="p-4 text-center">
+                            <h3 class="font-semibold text-lg mb-1">Knit Polo</h3>
+                            <p class="text-gray-500 text-sm mb-2">Tops</p>
+                            <p class="font-bold text-lg">$59.99</p>
+                            <div class="mt-4">
+                               <button class="add-to-cart-btn btn-secondary w-full py-2 px-4 rounded-full text-sm font-semibold">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Card 8 -->
+                    <div class="product-card bg-white rounded-lg overflow-hidden group" data-id="32" data-name="Suede Chelsea Boots" data-price="179.99" data-image="https://placehold.co/600x800/a16207/fffbeb?text=Boots">
+                        <img src="https://placehold.co/600x800/a16207/fffbeb?text=Boots" alt="Suede Chelsea Boots" class="w-full h-auto object-cover">
+                        <div class="p-4 text-center">
+                            <h3 class="font-semibold text-lg mb-1">Suede Chelsea Boots</h3>
+                            <p class="text-gray-500 text-sm mb-2">Footwear</p>
+                            <p class="font-bold text-lg">$179.99</p>
+                            <div class="mt-4">
+                               <button class="add-to-cart-btn btn-secondary w-full py-2 px-4 rounded-full text-sm font-semibold">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-400 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                 <!-- About, Shop, Customer Service, Company sections -->
+                 <div>
+                    <h4 class="text-white text-lg font-semibold mb-4">URBAN THREADS</h4>
+                    <p class="text-sm">Redefining fashion with trendy, high-quality apparel for the modern individual.</p>
+                </div>
+                <div>
+                    <h4 class="text-white text-lg font-semibold mb-4">Shop</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html#new-arrivals" class="hover:text-white">New Arrivals</a></li>
+                        <li><a href="man.html" class="hover:text-white">Men</a></li>
+                        <li><a href="woman.html" class="hover:text-white">Women</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white text-lg font-semibold mb-4">Customer Service</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="contect.html" class="hover:text-white">Contact Us</a></li>
+                        <li><a href="faq.html" class="hover:text-white">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                     <h4 class="text-white text-lg font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="about.html" class="hover:text-white">About Us</a></li>
+                        <li><a href="Careers.html" class="hover:text-white">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-sm">
+                <p>&copy; 2025 Urban Threads. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="fixed bottom-5 right-5 z-[1200] space-y-2"></div>
+
+    <!-- Cart Overlay -->
+    <div id="cart-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-[999] opacity-0 invisible transition-opacity duration-300"></div>
+
+    <!-- Cart Sidebar -->
+    <aside id="cart-sidebar" class="fixed top-0 right-0 w-full max-w-md h-full bg-white shadow-xl z-[1000] flex flex-col transform translate-x-full transition-transform duration-300">
+        <div class="flex items-center justify-between p-4 border-b">
+            <h2 class="text-xl font-semibold">Your Cart</h2>
+            <button id="close-cart-btn" class="hover:text-red-500"><i data-feather="x"></i></button>
+        </div>
+        <div id="cart-items" class="flex-grow p-4 overflow-y-auto">
+            <!-- Cart items will be dynamically inserted here -->
+            <p class="text-gray-500 text-center mt-8">Your cart is empty.</p>
+        </div>
+        <div class="p-4 border-t bg-gray-50">
+            <div class="flex justify-between items-center mb-4">
+                <span class="text-lg font-medium">Subtotal</span>
+                <span id="cart-subtotal" class="text-lg font-bold">$0.00</span>
+            </div>
+            <button class="w-full btn-primary py-3 rounded-lg font-semibold">Checkout</button>
+        </div>
+    </aside>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            feather.replace();
+
+            // --- Elements ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const cartButton = document.getElementById('cart-button');
+            const cartSidebar = document.getElementById('cart-sidebar');
+            const cartOverlay = document.getElementById('cart-overlay');
+            const closeCartBtn = document.getElementById('close-cart-btn');
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartCountEl = document.getElementById('cart-count');
+            const cartSubtotalEl = document.getElementById('cart-subtotal');
+            const toastContainer = document.getElementById('toast-container');
+
+            // --- State ---
+            let cart = JSON.parse(localStorage.getItem('urbanThreadsCart')) || [];
+
+            // --- Mobile Menu ---
+            mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+            // --- Cart Visibility ---
+            const toggleCart = () => {
+                cartSidebar.classList.toggle('translate-x-full');
+                cartOverlay.classList.toggle('opacity-0');
+                cartOverlay.classList.toggle('invisible');
+                document.body.classList.toggle('overflow-hidden');
+            };
+
+            cartButton.addEventListener('click', (e) => {
+                 e.preventDefault(); 
+                 toggleCart();
+            });
+            closeCartBtn.addEventListener('click', toggleCart);
+            cartOverlay.addEventListener('click', toggleCart);
+
+            // --- Toast Notification ---
+            const showToast = (message) => {
+                const toast = document.createElement('div');
+                toast.className = 'bg-black text-white py-2 px-5 rounded-lg shadow-lg opacity-0 transform translate-y-2 transition-all duration-300';
+                toast.textContent = message;
+                toastContainer.appendChild(toast);
+                
+                setTimeout(() => {
+                    toast.classList.remove('opacity-0', 'translate-y-2');
+                }, 10);
+
+                setTimeout(() => {
+                    toast.classList.add('opacity-0', 'translate-y-2');
+                    toast.addEventListener('transitionend', () => toast.remove());
+                }, 3000);
+            };
+
+            // --- Cart Functionality ---
+            const renderCart = () => {
+                cartItemsContainer.innerHTML = '';
+                if (cart.length === 0) {
+                    cartItemsContainer.innerHTML = '<p class="text-gray-500 text-center mt-8">Your cart is empty.</p>';
+                } else {
+                    cart.forEach(item => {
+                        const cartItemEl = document.createElement('div');
+                        cartItemEl.className = 'flex items-center gap-4 py-4 border-b cart-item';
+                        cartItemEl.dataset.id = item.id;
+                        cartItemEl.innerHTML = `
+                            <img src="${item.image}" alt="${item.name}" class="w-20 h-24 object-cover rounded-md">
+                            <div class="flex-grow">
+                                <h4 class="font-semibold">${item.name}</h4>
+                                <p class="text-gray-500 text-sm">$${item.price.toFixed(2)}</p>
+                                <div class="flex items-center gap-2 mt-2 cart-item-quantity">
+                                    <button class="quantity-decrease border rounded-full text-lg w-7 h-7 flex items-center justify-center">-</button>
+                                    <span class="font-medium w-8 text-center">${item.quantity}</span>
+                                    <button class="quantity-increase border rounded-full text-lg w-7 h-7 flex items-center justify-center">+</button>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <p class="font-bold">$${(item.price * item.quantity).toFixed(2)}</p>
+                                <button class="remove-item text-red-500 hover:text-red-700 text-sm mt-2">Remove</button>
+                            </div>
+                        `;
+                        cartItemsContainer.appendChild(cartItemEl);
+                    });
+                }
+                updateCartSummary();
+            };
+
+            const updateCartSummary = () => {
+                const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+                const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                cartCountEl.textContent = totalItems;
+                cartSubtotalEl.textContent = `$${subtotal.toFixed(2)}`;
+                localStorage.setItem('urbanThreadsCart', JSON.stringify(cart));
+            };
+            
+            const updateQuantity = (id, newQuantity) => {
+                const item = cart.find(item => item.id === id);
+                if (item) {
+                    if (newQuantity <= 0) {
+                        cart = cart.filter(cartItem => cartItem.id !== id);
+                    } else {
+                        item.quantity = newQuantity;
+                    }
+                }
+                renderCart();
+            };
+
+            // --- Event Delegation ---
+            document.body.addEventListener('click', (e) => {
+                // Add to Cart button
+                if (e.target.closest('.add-to-cart-btn')) {
+                    const productCard = e.target.closest('.product-card');
+                    const id = productCard.dataset.id;
+                    const name = productCard.dataset.name;
+                    const price = parseFloat(productCard.dataset.price);
+                    const image = productCard.querySelector('img').src;
+
+                    const existingItem = cart.find(item => item.id === id);
+                    if (existingItem) {
+                        existingItem.quantity++;
+                    } else {
+                        cart.push({ id, name, price, image, quantity: 1 });
+                    }
+                    
+                    renderCart();
+                    showToast(`${name} added to cart!`);
+                }
+
+                // Cart item actions
+                if (e.target.closest('.cart-item')) {
+                    const itemEl = e.target.closest('.cart-item');
+                    const id = itemEl.dataset.id;
+                    const item = cart.find(i => i.id === id);
+
+                    if (e.target.closest('.quantity-increase')) {
+                        updateQuantity(id, item.quantity + 1);
+                    }
+                    if (e.target.closest('.quantity-decrease')) {
+                        updateQuantity(id, item.quantity - 1);
+                    }
+                    if (e.target.closest('.remove-item')) {
+                        updateQuantity(id, 0);
+                    }
+                }
+            });
+
+            // --- Initial Load ---
+            renderCart();
+        });
+    </script>
+</body>
+</html>

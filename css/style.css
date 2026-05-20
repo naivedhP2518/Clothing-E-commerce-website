@@ -1,0 +1,75 @@
+/* ============================================
+   Urban Threads - Shared Styles
+   Common styles used across all pages
+   ============================================ */
+
+/* Base Styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa;
+    color: #1a1a1a;
+}
+
+body.overflow-hidden {
+    overflow: hidden;
+}
+
+/* Navigation Link Styles */
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #1a1a1a;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Primary Button */
+.btn-primary {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #333333;
+}
+
+/* Secondary Button */
+.btn-secondary {
+    background-color: transparent;
+    color: #1a1a1a;
+    border: 1px solid #1a1a1a;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+/* Cart Sidebar */
+#cart-sidebar {
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Cart Overlay */
+#cart-overlay {
+    transition: opacity 0.3s ease-in-out;
+}

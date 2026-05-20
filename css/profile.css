@@ -1,0 +1,30 @@
+/* ============================================
+   Urban Threads - Profile Page Styles
+   ============================================ */
+
+/* Profile Navigation Link */
+.profile-nav-link {
+    transition: all 0.3s ease;
+}
+
+.profile-nav-link.active,
+.profile-nav-link:hover {
+    background-color: #f1f5f9; /* cool-gray-100 */
+    color: #1a1a1a;
+    border-right: 3px solid #1a1a1a;
+}
+
+/* Disabled Inputs */
+input:disabled {
+    background-color: #e9ecef;
+    cursor: not-allowed;
+}
+
+/* Modal Styles */
+.modal-overlay {
+    transition: opacity 0.3s ease;
+}
+
+.modal-container {
+    transition: transform 0.3s ease;
+}

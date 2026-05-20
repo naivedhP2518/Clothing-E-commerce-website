@@ -1,0 +1,33 @@
+/* ============================================
+   Urban Threads - Sub-Page Shared Styles
+   Styles shared across product & content pages
+   ============================================ */
+
+/* Product Card (Sub-pages) */
+.product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+/* Content Section (About, FAQ, Shipping, etc.) */
+.content-section h2 {
+    font-size: 1.875rem; /* text-3xl */
+    font-weight: 700; /* bold */
+    margin-bottom: 1.5rem; /* mb-6 */
+}
+
+.content-section p,
+.content-section ul {
+    color: #4b5563; /* text-gray-600 */
+    line-height: 1.75; /* leading-relaxed */
+    margin-bottom: 1rem;
+}
+
+.content-section ul {
+    list-style-type: disc;
+    padding-left: 1.5rem; /* pl-6 */
+}

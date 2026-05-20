@@ -1,0 +1,78 @@
+/* ============================================
+   Urban Threads - Index Page Styles
+   Styles specific to the homepage (index.html)
+   ============================================ */
+
+/* Hero Section */
+.hero-section {
+    background-size: cover;
+    background-position: center;
+}
+
+/* Product Card Hover Effects */
+.product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+/* Add to Cart Button Reveal */
+.product-card .add-to-cart-btn {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.product-card:hover .add-to-cart-btn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Cart Sidebar (Index-specific full styles) */
+#cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+#cart-sidebar.open {
+    transform: translateX(0);
+}
+
+/* Cart Overlay (Index-specific) */
+#cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+#cart-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Cart Item Quantity Buttons */
+.cart-item-quantity button {
+    width: 28px;
+    height: 28px;
+}

@@ -7,18 +7,19 @@
 ## 📋 Table of Contents
 
 | # | Section |
-|---|---------|
-| 1 | [Features](#-features) |
-| 2 | [Technologies Used](#-technologies-used) |
-| 3 | [Project Structure](#-project-structure) |
-| 4 | [Pages Overview](#-pages-overview) |
-| 5 | [CSS Architecture](#-css-architecture) |
-| 6 | [JavaScript Modules](#-javascript-modules) |
-| 7 | [Image Assets](#-image-assets) |
-| 8 | [Installation & Setup](#-installation--setup) |
-| 9 | [Usage Guide](#-usage-guide) |
-| 10 | [Contributing](#-contributing) |
+|---|----------------------------|
+| 1 | ✨ Features |
+| 2 | 🛠 Technologies Used |
+| 3 | 📁 Project Structure |
+| 4 | 📄 Pages Overview |
+| 5 | 🎨 CSS Architecture |
+| 6 | ⚡ JavaScript Modules |
+| 7 | 🖼 Image Assets |
+| 8 | 📦 Installation & Setup |
+| 9 | 🚀 Usage Guide |
+| 10 | 🤝 Contributing |
 
+---
 ---
 
 ## ✨ Features
